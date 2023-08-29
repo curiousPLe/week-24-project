@@ -1,5 +1,11 @@
 # --- root/main.tf ---
 
+provider "aws" {
+  shared_credentials_file = "~/.aws/credentials"
+  profile = "499413842645"
+  region = "us-east-1"
+}
+
 module "networking" {
   source       = "./networking"
   vpc_cidr     = "10.0.0.0/16"
