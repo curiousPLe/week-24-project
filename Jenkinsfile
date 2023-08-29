@@ -36,7 +36,9 @@ pipeline {
             }
             
             steps {
-                env.AWS_PROFILE = '499413842645'
+                script {
+                    env.AWS_PROFILE = '499413842645'
+                }
                 
                 sh 'terraform init'
                 sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
